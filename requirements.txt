@@ -1,0 +1,6 @@
+datasets
+transformers
+dotenv
+sympy
+pylatexenc
+scipy
