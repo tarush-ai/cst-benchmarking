@@ -2,6 +2,7 @@ from datasets import load_dataset
 from model import Model
 import re, json
 import scipy.stats as stats
+from eval import Eval
 
 class LLMBGroundtruth:
    def __init__(self, llm_b_groundtruth_reasoning, llm_b_groundtruth_response, llm_b_groundtruth_confidence):
@@ -337,6 +338,8 @@ class MedXpertQA:
       return (score, feedback, banswer, confidence_score)
 
    def score_llm_performance(self, example, bgroundtruth: LLMBGroundtruth, aresponse: LLMAResponse, humaneval: LLMBHumanEval, llmeval: LLMBLLMEval):
+      
+      eval = Eval()
       
       llm_b_base_final_performance = grader.grade_answer(bgroundtruth.response, example["answer"])
       llm_a_base_final_performance = grader.grade_answer(aresponse.answer, example["answer"])

@@ -4,3 +4,4 @@ dotenv
 sympy
 pylatexenc
 scipy
+bigcodebench
