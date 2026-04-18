@@ -36,7 +36,7 @@ class Main:
          self.mmlupro.generate_llm_b_human_llm,
          self.medxpertqa.generate_llm_b_human_llm
       ]
-
+    
       with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
          futures = [executor.submit(task) for task in tasks]
          for f in concurrent.futures.as_completed(futures):
